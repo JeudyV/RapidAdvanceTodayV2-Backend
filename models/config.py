@@ -6,10 +6,6 @@ config.read('config.ini')
 
 ENV = config.get('rapid', 'env')
 
-if os.environ['env'] is not None:
-    ENV = os.environ['env']
-
-
 if ENV in ["localdb", "localqa", "localstage", "localprod", "docker", "database"]:
     
     DBTYPE = config.get(ENV, 'DBTYPE')
