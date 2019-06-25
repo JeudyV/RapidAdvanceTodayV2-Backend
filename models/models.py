@@ -11,15 +11,15 @@ class ShortForm(Model):
     price = Column(Integer(80), unique=True, nullable=False)
     email = Column(String(120), unique=True, nullable=False)
     last_4_of_ssn = Column(Integer(80), unique=True, nullable=False)
-    birthday = Column(Date)
+    birthday = Column(db.Date)
     zip = Column(Integer(10), unique=True, nullable=False)
 
     def __repr__(self):
         return self . username
 
 
-class LongFormStep1(Model):
-    id = Column(Integer, primary_key=True)
+class LongFormStep1(db.Model):
+    id = db.Column(Integer, primary_key=True)
     first_name = Column(String(120), unique=True, nullable=False)
     last_name = Column(String(120), unique=True, nullable=False)
     street_adress = Column(String(120), unique=True, nullable=False)
@@ -67,6 +67,3 @@ class LongFormStep3(Model):
 
     def __repr__(self):
         return self . username
-
-
-
